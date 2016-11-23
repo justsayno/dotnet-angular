@@ -1,0 +1,109 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appServiceName": {
+            "defaultValue": "[resourceGroup().name]",
+            "type": "string",
+            "metadata": {
+                "description": "The name of the App Service for the ConsotoBikeShop Web App"
+            }
+        },
+        "webAppName": {
+            "defaultValue": "[resourceGroup().name]",
+            "type": "string",
+            "metadata": {
+                "description": "The name of the Web App the ContosoBikeShop website is to hosted"
+            }
+        },
+        "packageUri": {
+            "defaultValue": "https://persistantstorage.blob.core.windows.net/web-packages/release.zip",
+            "type": "string",
+            "metadata": {
+                "description": "The URI to the web package deployed in Azure Blob Storage. How to create a web package https://msdn.microsoft.com/en-us/library/dd465323(v=vs.110).aspx"
+            }
+        }
+    },
+    "variables": {
+    },
+    "resources": [
+        {
+            "comments": "The Web App Service for the deployment of the Web App to host the Web App",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "F1",
+                "tier": "Free",
+                "size": "F1",
+                "family": "F",
+                "capacity": 0
+            },
+            "name": "[parameters('appServiceName')]",
+            "apiVersion": "2015-08-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "name": "[parameters('appServiceName')]",
+                "numberOfWorkers": 0
+            },
+            "resources": [],
+            "dependsOn": []
+        },
+        {
+            "comments": "The Web App that hosts the application",
+            "type": "Microsoft.Web/sites",
+            "name": "[parameters('webAppName')]",
+            "apiVersion": "2015-08-01",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "properties": {
+                "name": "[parameters('webAppName')]",
+                "hostNames": [
+                    "[concat(parameters('webAppName'),'.azurewebsites.net')]"
+                ],
+                "enabledHostNames": [
+                    "[concat(parameters('webAppName'),'.azurewebsites.net')]",
+                    "[concat(parameters('webAppName'),'.scm.azurewebsites.net')]"
+                ],
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('webAppName'),'.azurewebsites.net')]",
+                        "sslState": 0,
+                        "ipBasedSslState": 0
+                    },
+                    {
+                        "name": "[concat(parameters('webAppName'),'.scm.azurewebsites.net')]",
+                        "sslState": 0,
+                        "ipBasedSslState": 0
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appServiceName'))]"
+            },
+            "resources": [
+                {
+                    "name": "MSDeploy",
+                    "type": "extensions",
+                    "location": "[resourceGroup().location]",
+                    "apiVersion": "2015-08-01",
+                    "dependsOn": [
+                        "[concat('Microsoft.Web/sites/', parameters('webAppName'))]"
+                    ],
+                    "tags": {
+                        "displayName": "webDeploy"
+                    },
+                    "properties": {
+                        "packageUri": "[parameters('packageUri')]",
+                        "dbType": "None"
+                    }
+                }
+            ],
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('appServiceName'))]"
+            ]
+        }
+    ],
+    "outputs": {
+        "siteUrl": {
+            "type": "string",
+            "value": "[concat('https://', parameters('webAppName'), '.azurewebsites.net')]"
+        }
+    }
+}

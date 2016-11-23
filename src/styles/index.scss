@@ -1,0 +1,10 @@
+/* Base Style Imports */
+$roboto-font-path: "/fonts/roboto/";
+@import 'color.scss';
+@import 'variables.scss';
+@import 'materialize.scss';
+
+[ng-click],
+[ui-sref] {
+    cursor: pointer;
+}

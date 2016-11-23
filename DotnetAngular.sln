@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "src", "src\", "{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53323"
+		Debug.AspNetCompiler.PhysicalPath = "src\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53323\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53323"
+		Release.AspNetCompiler.PhysicalPath = "src\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53323\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53323"
+		SlnRelativePath = "src\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetAngular", "server\DotnetAngular.csproj", "{16DA48CD-C83C-4FE2-9101-27B32730513C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{81257893-C1B2-47F8-96D7-E89013C330E9}"
+	ProjectSection(SolutionItems) = preProject
+		.babelrc = .babelrc
+		.eslintignore = .eslintignore
+		.eslintrc = .eslintrc
+		.gitignore = .gitignore
+		karma.conf.js = karma.conf.js
+		LICENSE = LICENSE
+		package.json = package.json
+		README.md = README.md
+		webpack.config.js = webpack.config.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Debug|x64.Build.0 = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Debug|x86.Build.0 = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Release|x64.ActiveCfg = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Release|x64.Build.0 = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Release|x86.ActiveCfg = Debug|Any CPU
+		{E6119A25-7497-47D2-9C60-8DF1BF8DD91F}.Release|x86.Build.0 = Debug|Any CPU
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Debug|x64.ActiveCfg = Debug|x86
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Debug|x86.ActiveCfg = Debug|x86
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Debug|x86.Build.0 = Debug|x86
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Release|Any CPU.ActiveCfg = Debug|x86
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Release|Any CPU.Build.0 = Debug|x86
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Release|x64.ActiveCfg = Debug|x86
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Release|x64.Build.0 = Debug|x86
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Release|x86.ActiveCfg = Debug|x86
+		{16DA48CD-C83C-4FE2-9101-27B32730513C}.Release|x86.Build.0 = Debug|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

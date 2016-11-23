@@ -1,0 +1,28 @@
+.main-navigation{
+    .side-nav{
+        top: 64px;
+        &.fixed{
+            width:80px;
+        }
+        a{
+            padding:0;
+        }
+        .menu-button{
+            padding:0;
+            width:100%;
+            height: 50px;
+            &:hover{
+                cursor: pointer;
+            }
+            svg{
+                width: 75px;
+                display: block;
+                padding: 10px 20px;
+                color: white;
+            }
+        }
+        a{
+            padding-left: 20px;
+        }
+    }
+}

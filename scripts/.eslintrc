@@ -1,0 +1,27 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb"
+  ],
+  "plugins": [
+  ],
+  "env": {
+    "browser" : true
+  },
+  "globals": {
+    "describe": true,
+    "beforeEach": true,
+    "it": true,
+    "expect": true
+  },
+  "rules": {
+    "key-spacing"          : 0,
+    "max-len"              : [2, 120, 2],
+    "object-curly-spacing" : [2, "always"],
+    "linebreak-style": 0,
+    "comma-dangle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-console": "off",
+    "global-require": "off"
+  }
+}
